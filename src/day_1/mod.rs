@@ -1,7 +1,9 @@
 use std::fs;
 
+#[allow(dead_code)]
 const DIAL_SIZE: i32 = 100;
 
+#[allow(dead_code)]
 pub fn solve_1() -> i32 {
     let rotations = fs::read_to_string("src/day_1/input.txt")
         .unwrap()
@@ -30,6 +32,7 @@ pub fn solve_1() -> i32 {
     result
 }
 
+#[allow(dead_code)]
 pub fn solve_2() -> i32 {
     let rotations = fs::read_to_string("src/day_1/input.txt")
         .unwrap()
