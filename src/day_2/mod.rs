@@ -1,5 +1,6 @@
 use std::fs;
 
+#[allow(dead_code)]
 pub fn solve_1() -> i64 {
     let ranges = fs::read_to_string("src/day_2/input.txt")
         .unwrap()
@@ -40,6 +41,7 @@ pub fn solve_1() -> i64 {
     result
 }
 
+#[allow(dead_code)]
 pub fn solve_2() -> i64 {
     let ranges = fs::read_to_string("src/day_2/input.txt")
         .unwrap()
