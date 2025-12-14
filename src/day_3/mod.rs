@@ -1,5 +1,6 @@
 use std::fs;
 
+#[allow(dead_code)]
 fn read_file() -> Vec<String> {
     fs::read_to_string("src/day_3/input.txt")
         .unwrap()
@@ -8,6 +9,7 @@ fn read_file() -> Vec<String> {
         .collect::<Vec<String>>()
 }
 
+#[allow(dead_code)]
 pub fn solve_1() -> i32 {
     let banks = read_file();
 
@@ -50,6 +52,7 @@ pub fn solve_1() -> i32 {
     result
 }
 
+#[allow(dead_code)]
 pub fn solve_2() -> i64 {
     let banks = read_file();
 
