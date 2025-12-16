@@ -1,5 +1,6 @@
 use std::fs;
 
+#[allow(dead_code)]
 fn read_input() -> Vec<Vec<char>> {
 	fs::read_to_string("src/day_4/input.txt")
 		.unwrap()
@@ -8,6 +9,7 @@ fn read_input() -> Vec<Vec<char>> {
 		.collect::<Vec<Vec<char>>>()
 }
 
+#[allow(dead_code)]
 pub fn solve_1() -> i32 {
 	let diagram = read_input();
 
@@ -62,6 +64,7 @@ pub fn solve_1() -> i32 {
 	result
 }
 
+#[allow(dead_code)]
 pub fn solve_2() -> i32 {
 	let mut diagram = read_input();
 
