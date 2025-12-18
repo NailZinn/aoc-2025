@@ -1,5 +1,6 @@
 use std::fs;
 
+#[allow(dead_code)]
 fn read_input() -> (Vec<(i64, i64)>, Vec<i64>) {
     let lines: Vec<String> = fs::read_to_string("src/day_5/input.txt")
         .unwrap()
@@ -32,6 +33,7 @@ fn read_input() -> (Vec<(i64, i64)>, Vec<i64>) {
     (parsed_ranges, parsed_ids)
 }
 
+#[allow(dead_code)]
 pub fn solve_1() -> i32 {
     let (ranges, ids) = read_input();
 
@@ -47,6 +49,7 @@ pub fn solve_1() -> i32 {
     result
 }
 
+#[allow(dead_code)]
 pub fn solve_2() -> i64 {
     let (mut ranges, _) = read_input();
 
