@@ -46,3 +46,23 @@ pub fn solve_1() -> i32 {
 
     result
 }
+
+pub fn solve_2() -> i64 {
+    let (mut ranges, _) = read_input();
+
+    ranges.sort_by(|x, y| x.0.cmp(&y.0));
+
+    let mut result = ranges[0].1 - ranges[0].0;
+    let mut right = ranges[0].1;
+
+    for i in 1..ranges.len() {
+        if ranges[i].0 > right {
+            result += ranges[i].1 - ranges[i].0 + 1;
+        } else if ranges[i].1 > right {
+            result += ranges[i].1 - right;
+        }
+        right = right.max(ranges[i].1);
+    }
+    
+    result
+}
