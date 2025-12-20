@@ -1,5 +1,6 @@
 use std::fs;
 
+#[allow(dead_code)]
 fn read_input() -> (Vec<Vec<i64>>, Vec<char>) {
     let lines: Vec<Vec<String>> = fs::read_to_string("src/day_6/input.txt")
         .unwrap()
@@ -25,6 +26,7 @@ fn read_input() -> (Vec<Vec<i64>>, Vec<char>) {
     (operands, operators)
 }
 
+#[allow(dead_code)]
 pub fn solve_1() -> i64 {
     let (operands, operators) = read_input();
 
@@ -39,6 +41,7 @@ pub fn solve_1() -> i64 {
         .sum()
 }
 
+#[allow(dead_code)]
 pub fn solve_2() -> i64 {
     let lines: Vec<String> = fs::read_to_string("src/day_6/input.txt")
         .unwrap()
