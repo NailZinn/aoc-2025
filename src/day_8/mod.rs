@@ -1,5 +1,6 @@
 use std::fs;
 
+#[allow(dead_code)]
 fn read_input() -> Vec<(i64, i64, i64)> {
     fs::read_to_string("src/day_8/input.txt")
         .unwrap()
@@ -9,10 +10,12 @@ fn read_input() -> Vec<(i64, i64, i64)> {
         .collect()
 }
 
+#[allow(dead_code)]
 pub fn distance(p1: (i64, i64, i64), p2: (i64, i64, i64)) -> f64 {
     f64::sqrt((p1.0 - p2.0).pow(2) as f64 + (p1.1 - p2.1).pow(2) as f64 + (p1.2 - p2.2).pow(2) as f64)
 }
 
+#[allow(dead_code)]
 pub fn solve_1() -> i64 {
     let coordinates = read_input();
     let mut leaders: Vec<usize> = coordinates.iter().enumerate().map(|(i, _)| i).collect();
@@ -54,6 +57,7 @@ pub fn solve_1() -> i64 {
         .product()
 }
 
+#[allow(dead_code)]
 pub fn solve_2() -> i64 {
     let coordinates = read_input();
     let mut leaders: Vec<usize> = coordinates.iter().enumerate().map(|(i, _)| i).collect();
