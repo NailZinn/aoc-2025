@@ -53,3 +53,42 @@ pub fn solve_1() -> i64 {
         .map(|x| x.len() as i64)
         .product()
 }
+
+pub fn solve_2() -> i64 {
+    let coordinates = read_input();
+    let mut leaders: Vec<usize> = coordinates.iter().enumerate().map(|(i, _)| i).collect();
+    let mut circuits: Vec<Vec<usize>> = leaders.iter().map(|&x| vec![x]).collect();
+    let mut distances: Vec<(usize, usize, f64)> = vec![];
+
+    for i in 0..coordinates.len() {
+        for j in i + 1..coordinates.len() {
+            distances.push((i, j, distance(coordinates[i], coordinates[j])));
+        }
+    }
+
+    distances.sort_by(|x, y| x.2.total_cmp(&y.2));
+
+    for (i, j, _) in distances.into_iter() {
+        if leaders[i] == leaders[j] { continue; }
+
+        let mut circuit_to_move: Vec<usize> = vec![];
+        let moved_leader = leaders[j];
+
+        for &index in circuits[leaders[j]].iter() {
+            circuit_to_move.push(index);
+            leaders[index] = leaders[i];
+        }
+
+        circuits[moved_leader] = vec![];
+
+        for index in circuit_to_move.into_iter() {
+            circuits[leaders[i]].push(index);
+        }
+
+        if circuits.iter().any(|x| x.len() == coordinates.len()) {
+            return coordinates[i].0 * coordinates[j].0;
+        }
+    }
+
+    unreachable!();
+}
