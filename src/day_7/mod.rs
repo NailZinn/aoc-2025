@@ -1,5 +1,6 @@
 use std::{collections::HashSet, fs, iter::repeat};
 
+#[allow(dead_code)]
 fn read_input() -> Vec<Vec<char>> {
     fs::read_to_string("src/day_7/input.txt")
         .unwrap()
@@ -8,6 +9,7 @@ fn read_input() -> Vec<Vec<char>> {
         .collect()
 }
 
+#[allow(dead_code)]
 pub fn solve_1() -> i32 {
     let diagram = read_input();
 
@@ -38,6 +40,7 @@ pub fn solve_1() -> i32 {
     result
 }
 
+#[allow(dead_code)]
 pub fn solve_2() -> i64 {
     let diagram = read_input();
 
