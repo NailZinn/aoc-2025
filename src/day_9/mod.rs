@@ -1,5 +1,6 @@
 use std::{collections::HashSet, fs};
 
+#[allow(dead_code)]
 fn read_input() -> Vec<(i64, i64)> {
     fs::read_to_string("src/day_9/input.txt")
         .unwrap()
@@ -9,6 +10,7 @@ fn read_input() -> Vec<(i64, i64)> {
         .collect()
 }
 
+#[allow(dead_code)]
 pub fn solve_1() -> i64 {
     let coordinates = read_input();
 
@@ -23,6 +25,7 @@ pub fn solve_1() -> i64 {
     result
 }
 
+#[allow(dead_code)]
 pub fn solve_2() -> i64 {
     let coordinates = read_input();
 
