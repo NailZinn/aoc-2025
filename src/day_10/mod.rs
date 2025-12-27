@@ -1,5 +1,6 @@
 use std::{collections::VecDeque, fs, iter};
 
+#[allow(dead_code)]
 fn read_input() -> Vec<(Vec<u8>, Vec<Vec<usize>>, Vec<i32>)> {
     fs::read_to_string("src/day_10/input.txt")
         .unwrap()
@@ -39,6 +40,7 @@ fn read_input() -> Vec<(Vec<u8>, Vec<Vec<usize>>, Vec<i32>)> {
         .collect()
 }
 
+#[allow(dead_code)]
 pub fn solve_1() -> i32 {
     let manual = read_input();
 
@@ -63,7 +65,6 @@ pub fn solve_1() -> i32 {
 
         loop {
             let current_buttons = bfs.pop_front().unwrap();
-            if current_buttons.len() % 10 == 0 { println!("{}", current_buttons.len()); }
             let mut current_light_diagram: Vec<u8> = Vec::from_iter(iter::repeat(0).take(light_diagram.len()));
 
             for current_button in current_buttons.iter() {
@@ -90,6 +91,7 @@ pub fn solve_1() -> i32 {
     result
 }
 
+#[allow(dead_code)]
 pub fn solve_2() -> i64 {
     let manual = read_input();
 
@@ -120,6 +122,7 @@ pub fn solve_2() -> i64 {
     result
 }
 
+#[allow(dead_code)]
 fn traverse_press_combinations(joltages: &Vec<i32>, press_combinations: &Vec<(Vec<i32>, i32)>) -> i64 {
 	if joltages.iter().all(|&x| x == 0) { return 0; }
 
