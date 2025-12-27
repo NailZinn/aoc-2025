@@ -1,5 +1,6 @@
 use std::{collections::{HashMap, HashSet}, fs};
 
+#[allow(dead_code)]
 fn read_input() -> HashMap<String, Vec<String>> {
     HashMap::from_iter(
         fs::read_to_string("src/day_11/input.txt")
@@ -10,6 +11,7 @@ fn read_input() -> HashMap<String, Vec<String>> {
     )
 }
 
+#[allow(dead_code)]
 pub fn solve_1() -> i32 {
     let adjacency_list = read_input();
 
@@ -40,6 +42,7 @@ pub fn solve_1() -> i32 {
     result
 }
 
+#[allow(dead_code)]
 pub fn solve_2() -> i64 {
     let adjacency_list = read_input();
 
@@ -56,6 +59,7 @@ pub fn solve_2() -> i64 {
     svr_to_dac * dac_to_fft * fft_to_out
 }
 
+#[allow(dead_code)]
 fn number_of_paths<'a>(
     from: &str, to: &'a str, skip: Option<&str>,
     adjacency_list: &'a HashMap<String, Vec<String>>,
