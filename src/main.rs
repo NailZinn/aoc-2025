@@ -13,4 +13,6 @@ mod day_11;
 fn main() {
     let solution_1 = day_11::solve_1();
     println!("{}", solution_1);
+    let solution_2 = day_11::solve_2();
+    println!("{}", solution_2);
 }
